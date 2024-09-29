@@ -1,3 +1,16 @@
+const header = document.querySelector(".header-container");
+const toggleScroll = "sticky";
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.scrollY;
+  if (currentScroll > 150) {
+    header.classList.add(toggleScroll);
+  } else {
+    header.classList.remove(toggleScroll);
+  }
+});
+
+
 let topBtn = document.getElementById("topBtn");
 
 window.onscroll = function () {
@@ -12,7 +25,7 @@ function scrollFunction() {
     }
 }
 
-function topFunction() {
+function scrollToTop() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
@@ -34,7 +47,7 @@ let projects = [
     },
     {
         title: 'Game Key Store',
-        description: 'A mobile-optimized game key reselling website that ensures secure user interactions and transactions. The backend runs in a Docker container with an ASP.NET Core Web API for user authentication and key management, built with C# on .NET 8. The frontend, developed in TypeScript and React, provides a responsive mobile experience. This is a group project that is currently in development.',
+        description: 'A school group project still in development: <br> A mobile-optimized game key reselling website. <br> The backend runs in a Docker container with an ASP.NET Core Web API for user authentication and key management, built with C# on .NET 8. The frontend, developed in TypeScript and React, provides a responsive mobile experience.',
         images: ['img/key_home.jpg'],
         technologies: ['img/html.png', 'img/css.png', 'img/react.png', 'img/typescript.png', 'img/net-logo.png', 'img/c_sharp.png'],
     },

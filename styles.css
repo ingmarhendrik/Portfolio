@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-html {
+* {
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 body {
@@ -18,64 +19,98 @@ body {
     font-family: "Inter", sans-serif;
 }
 
-.carousel-control-prev, .carousel-control-next {
-    filter: invert(100%); 
-}
-
-.orange-title {
+h1 {
     color: #F58700;
     font-size: 2em;
     font-weight: bold;
 }
 
-.regular-text {
+p {
     color: white;
 }
 
-header {
-    width: 100%;
-    background-color: rgb(2, 2, 37);
-    position: fixed;
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 1170px;
+    margin: auto;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    filter: invert(100%); 
+}
+
+/* Header styles */
+.header-container {
+    position: absolute;
     top: 0;
+    right: 0;
+    left: 0;
+    padding: 20px 0;
     z-index: 99;
 }
 
-.nav-bar {
+.header {
     display: flex;
-    padding: 1em;
-    font-size: 1em;
     align-items: center;
+    justify-content: space-between;
 }
 
-.nav-bar img {
-    width: 20%;
+.header-container.sticky {
+    position: fixed;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+    backdrop-filter: blur(10px);
+    animation: slideDown 0.35s ease-out;
+}
+
+.header-container.sticky img {
+    width: 60%;
+}
+
+@keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+.logo img {
+    width: 70%;
+    height: auto;
+    margin-left: 6.5em;
     cursor: pointer;
-    margin-left: 6em;
 }
 
-.link-container {
-    margin-left: -11em;
+.nav-bar {
+    margin-right: 7em;
+    display: flex;
 }
 
 .nav-bar a {
-    color: white;
     margin-right: 2em;
+    color: white;
+    transition: 0.3s ease;
 }
 
 .nav-bar a:hover {
-    text-decoration: none;
     color: #F58700;
+    text-decoration: none;
 }
 
+/* Home Page styles */
 .introduction nav a img {
     width: 36px;
     height: 36px;
 }
 
-
 .introduction {
-    margin-left: 7em;
-    margin-top: 5em;
+    padding-left: 7em;
+    padding-top: 5rem;
 }
 
 .introduction p {
@@ -92,54 +127,68 @@ header {
 
 .introduction nav a {
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: transform 0.5s, scale 0.3s;
+
 }
 
 .introduction nav a:hover {
-    transform: scale(1.25); 
+    transform: rotate(360deg) scale(1.25);
 }
 
-#about {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 100vh;
+
+/* About page styles */
+.about {
+    padding-top: 130px;
 }
 
 .about-content {
-    width: 50%;
-    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
 }
 
+.about-text {
+    flex-basis: 60%;
+}
 
 .about-img {
-    width: 20em;
-    height: 20em;
+    width: 25%;
+    height: 25%;
     border-radius: 50%;
     overflow: hidden;
+    border: 10px solid #F58700;
+    box-shadow: 5px 10px 25px rgba(0, 0, 0, 1)
 }
 
 .about-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 130%;
+    width: 130%;
     transition: 0.3s ease;
+    object-fit: cover;
     cursor: pointer;
+    transform: translateZ(10px);
 }
 
 .about-img img:hover {
     transform: scale(1.25);
 }
 
-#projects {
-    padding: 2em;
-    margin-top: -6.5em;
+/* Projects page styles */
+
+.projects {
+    padding: 40px 0;
+}
+
+.projects h1 {
+    margin-top: 2em;
+    text-align: center;
 }
 
 .projects-container {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 2em;
+    flex-wrap: wrap;
   }
 
   .project {
@@ -149,6 +198,7 @@ header {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     color: white;
     padding: 1em;
+    position: relative;
     text-align: center;
     transition: 0.3s ease;
     min-height: 350px;
@@ -163,7 +213,6 @@ header {
     overflow: hidden;
 }
 
-  
   .project-img img {
     width: 100%;
     object-fit: contain;
@@ -177,8 +226,6 @@ header {
     border-radius: 1em 1em 0 0 ;
   }
 
-  
-  
   .project-info {
     margin-top: 1em;
   }
@@ -199,7 +246,6 @@ header {
   }
   
   .technologies img {
-    width: 2em;
     height: 2em;
     margin-right: 1em;
     cursor: pointer;
@@ -239,67 +285,81 @@ header {
 
 /* Mobile phones (320px and above) */
 @media only screen and (max-width: 480px) {
-    .nav-bar {
+    .header {
         display: none;
     }
-  
+
+    .container {
+        width: 0;
+      }
+
     .introduction {
+        padding-left: 0;
+        padding-top: 4rem;
         text-align: center;
-        margin: 1.5em 0;
     }
-  
+    
     .introduction p {
-        margin-top: 4em;
         font-size: 2.2em;
     }
-  
+    
     .introduction nav {
-      margin-top: 1em;
-      display: flex;
-      justify-content: center;
-      gap: 1em;
+        justify-content: center;
     }
-  
-    #about {
-        margin-top: 10em;
+    
+    .introduction nav a img {
+        width: 28px;
+        height: 28px;
+        margin-right: -0.25em;
+    }
+    
+    /* About page styles */
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 7em;
+    }
+    
+    .about-text {
+        width: 20em;
+        border: 6px solid #F58700;
+        padding: 1.5em;
+        border-radius: 5%;
+        background-color: #00115c;
     }
 
-    .about-content {
-        text-align: center;
-        border: 1px solid black;
-        width: 20em;
-        padding: 2em;
-        background-color: #01155c;
-        border-radius: 2em;
+    .about-text h1 {
+        margin-bottom: 0.5em;
     }
 
     .about-img {
         display: none;
     }
-  
-    #projects {
+      
+    /* Projects styles */
+    .projects {
         margin-top: 10em;
         padding: 1.5em;
     }
-  
+
+    .projects h1 {
+        margin-bottom: 1em;
+    }
+      
     .projects-container {
-      display: flex;
-      flex-direction: column;
-      gap: 2em;
+        display: flex;
+        flex-direction: column;
+        gap: 2em; 
     }
-  
+      
     .project {
-      background-color: #01155c;
-      border-radius: 1.5em;
-      padding: 1em;
-    }
-  
-    .project h4 {
-      font-size: 1.4em;
+        background-color: #01155c;
+        border-radius: 1.5em;
+        padding: 1em;
     }
   
     .project-info p {
-      font-size: 0.9em;
+      font-size: 0.8em;
     }
   
     .technologies img { 
@@ -400,16 +460,16 @@ header {
 @media (min-width: 1441px) and (max-width: 1920px) {
     .nav-bar {
         padding: 4em;
-        margin-left: 7em;
     }
 
     .nav-bar a {
         font-size: 1.75em;
+        margin-left: 1em;
     }
 
     .introduction {
-        font-size: 1.75em;
-        margin-top: 7em;
+        font-size: 1.5em;
+        margin-top: 8em;
     }
 
     .introduction nav a img {
@@ -422,5 +482,7 @@ header {
         font-size: 1.75em;
         margin-top: 0em;
     }
+
+    
 
 }
