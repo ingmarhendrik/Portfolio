@@ -138,14 +138,15 @@ a {
 
 /* About page styles */
 .about {
-    padding-top: 130px;
+    padding-top: 8.125em;
+    margin-left: -2em;
 }
 
 .about-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 3.125em;
 }
 
 .about-text {
@@ -201,7 +202,6 @@ a {
     position: relative;
     text-align: center;
     transition: 0.3s ease;
-    min-height: 350px;
   }
 
   .project:hover {
@@ -285,17 +285,20 @@ a {
 
 /* Mobile phones (320px and above) */
 @media only screen and (max-width: 480px) {
+
+    .container {
+        width: 0;
+    }
+
+    /* Header */
     .header {
         display: none;
     }
 
-    .container {
-        width: 0;
-      }
-
+    /* Home Page */
     .introduction {
         padding-left: 0;
-        padding-top: 4rem;
+        padding-top: 5.5rem;
         text-align: center;
     }
     
@@ -308,32 +311,43 @@ a {
     }
     
     .introduction nav a img {
-        width: 28px;
-        height: 28px;
+        width: 1.75em;
+        height: 1.75em;
         margin-right: -0.25em;
+    }
+
+    .about {
+        margin-top: 15em;
     }
     
     /* About page styles */
     .about-content {
         flex-direction: column;
         text-align: center;
-        padding-top: 7em;
-    }
-    
-    .about-text {
-        width: 20em;
         border: 6px solid #F58700;
+        width: 20em;
         padding: 1.5em;
+        margin-left: -10em;
         border-radius: 5%;
         background-color: #00115c;
     }
 
-    .about-text h1 {
-        margin-bottom: 0.5em;
+    .about-text {
+        padding-bottom: 1em;
     }
 
     .about-img {
-        display: none;
+        border: 6px solid #F58700;
+        width: 50%;
+        margin-bottom: 1em;
+    }
+
+    .about-img img:hover {
+        transform: none;
+    }
+
+    .about-text h1 {
+        margin-bottom: 0.5em;
     }
       
     /* Projects styles */
@@ -367,7 +381,6 @@ a {
     }
   
     .project img {
-      width: 100%;
       border-radius: 10px;
       margin-bottom: 1em;
     }
@@ -377,19 +390,61 @@ a {
   }
   
   
-  
-
 /* Small tablets (481px to 767px) */
 @media only screen and (min-width: 481px) and (max-width: 767px) {
 
     .introduction {
+        padding-left: 0;
         text-align: center;
     }
 
+    .logo img {
+        margin-left: 2em;
+    }
+
+    .nav-bar {
+        margin-right: 2em;
+    }
+
+    .nav-bar a {
+        margin-right: 1em;
+    }
 
     .introduction nav {
         justify-content: center;
-        margin-top: 2em;
+    }
+
+    .about {
+        padding-top: 10em;
+    }
+
+    .about-text {
+        flex-basis: 60%;
+    }
+
+    .about-img {
+        border: 5px solid #F58700;
+        width: 35%;
+    }
+
+    .about-img img:hover {
+        transform: none;
+    }
+
+    .projects h1 {
+        padding-bottom: 0.5em;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        width: 80%;
+        margin: 0 auto;
+        gap: 2em;
+        align-items: center;
+    }
+
+    .project {
+        width: 85%;
     }
     
 }
@@ -398,60 +453,108 @@ a {
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
 
     .introduction {
-        margin-top: 10em;
+        padding-left: 5em;
     }
+
+    .logo {
+        margin-left: -2em;
+    }
+
     .nav-bar {
-        justify-content: flex-start;
+        margin-right: 2em;
     }
 
-    .about-img {
-        width: 12em;
-        height: 12em;
-        margin: 0 auto 2em auto;
-    }
-
-    #about {
-        margin-left: 4em;
+    .about {
+        padding-top: 15em;
+        padding-left: 4em;
     }
 
     .about-content {
-        width: 25em;
-        text-align: center;
+        padding-right: 4em;
     }
 
-    .projects-container {
-        display: flex;
-        flex-direction: column;
-        gap: 3em;
-        align-items: center;
+    .about-text {
+        flex-basis: 50%;
     }
-
-    .project {
-        width: 50%;
-    }
-
-
-
-
-}
-
-/* Desktop (1024px to 1199px) */
-@media only screen and (min-width: 1024px) and (max-width: 1280px) {
-
 
     .about-img {
-        margin-left: -5em;
+        border: 5px solid #F58700;
+        width: 35%;
+    }
+
+    .about-img img:hover {
+        transform: none;
+    }
+
+    .projects h1 {
+        padding-bottom: 0.5em;
     }
 
     .projects-container {
-        display: flex;
         flex-direction: column;
+        width: 80%;
+        margin: 0 auto;
+        gap: 2em;
         align-items: center;
-        gap: 3em;
     }
 
     .project {
-        width: 50%;
+        width: 70%;
+    }
+    
+}
+
+/* Desktop (1024px to 1279px) */
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+
+    .introduction {
+        padding-left: 5em;
+    }
+
+    .logo {
+        margin-left: -2em;
+    }
+
+    .nav-bar {
+        margin-right: 2em;
+    }
+
+    .about {
+        padding-top: 15em;
+        padding-left: 4em;
+    }
+
+    .about-content {
+        padding-right: 4em;
+    }
+
+    .about-text {
+        flex-basis: 50%;
+    }
+
+    .about-img {
+        border: 5px solid #F58700;
+        width: 35%;
+    }
+
+    .about-img img:hover {
+        transform: none;
+    }
+
+    .projects h1 {
+        padding-bottom: 0.5em;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        width: 80%;
+        margin: 0 auto;
+        gap: 2em;
+        align-items: center;
+    }
+
+    .project {
+        width: 70%;
     }
 
 }
@@ -459,17 +562,22 @@ a {
 /* Large desktop */
 @media (min-width: 1441px) and (max-width: 1920px) {
     .nav-bar {
-        padding: 4em;
+        padding: 2em;
     }
 
     .nav-bar a {
-        font-size: 1.75em;
+        font-size: 2em;
         margin-left: 1em;
+    }
+
+    .logo {
+        width: 40%;
+        padding-left: 3em;
     }
 
     .introduction {
         font-size: 1.5em;
-        margin-top: 8em;
+        margin-top: 5em;
     }
 
     .introduction nav a img {
@@ -478,11 +586,38 @@ a {
         margin-top: 1em;
     }
 
-    #about {
+    .about {
         font-size: 1.75em;
         margin-top: 0em;
+        margin-left: -17em;
     }
 
-    
+    .about h1 {
+        padding-bottom: 0.5em;
+    }
+
+    .about-img {
+        width: 40%;
+        margin-right: -12em;
+    }
+
+    .projects h1 {
+        padding-bottom: 0.5em;
+        font-size: 4em;
+    }
+    .projects-container {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .projects h4 {
+        font-size: 2.75em;
+        padding: 0.5em;
+    }
+
+    .projects p {
+        font-size: 1.5em;
+    }
+
 
 }
