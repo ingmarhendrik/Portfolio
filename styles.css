@@ -9,9 +9,6 @@
 body {
     background: hsla(0, 0%, 0%, 1);
     background: linear-gradient(45deg, hsla(0, 0%, 0%, 1) 0%, hsla(255, 96%, 22%, 1) 100%);
-    background: -moz-linear-gradient(45deg, hsla(0, 0%, 0%, 1) 0%, hsla(255, 96%, 22%, 1) 100%);
-    background: -webkit-linear-gradient(45deg, hsla(0, 0%, 0%, 1) 0%, hsla(255, 96%, 22%, 1) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#000000", endColorstr="#1D026F", GradientType=1 );
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin: 0;
@@ -285,11 +282,6 @@ a {
 
 /* Mobile phones (320px and above) */
 @media only screen and (max-width: 480px) {
-
-    .container {
-        width: 0;
-    }
-
     /* Header */
     .header {
         display: none;
@@ -317,6 +309,8 @@ a {
     }
 
     .about {
+        display: flex;
+        margin: 0 auto;
         margin-top: 15em;
     }
     
@@ -325,15 +319,14 @@ a {
         flex-direction: column;
         text-align: center;
         border: 6px solid #F58700;
-        width: 20em;
         padding: 1.5em;
-        margin-left: -10em;
         border-radius: 5%;
         background-color: #00115c;
+        box-sizing: border-box;
     }
 
     .about-text {
-        padding-bottom: 1em;
+        margin-bottom: 1.5em;
     }
 
     .about-img {
@@ -560,7 +553,7 @@ a {
 }
 
 /* Large desktop */
-@media (min-width: 1441px) and (max-width: 1920px) {
+@media (min-width: 1441px) {
     .nav-bar {
         padding: 2em;
     }

@@ -1,3 +1,5 @@
+document.querySelector('.scroll-to-top').addEventListener('click', scrollToTop);
+
 const header = document.querySelector(".header-container");
 const toggleScroll = "sticky";
 
