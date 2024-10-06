@@ -31,10 +31,6 @@ p {
     color: white;
 }
 
-.myContainer {
-    width: 1170px;
-}
-
 /* Header styles */
 .header-container {
     position: absolute;
@@ -183,9 +179,9 @@ p {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-  }
+}
 
-  .project {
+.project {
     background-color: rgb(2, 2, 71);
     border-radius: 1em;
     flex-basis: 30%;
@@ -258,6 +254,9 @@ p {
   .technologies {
     display: flex;
     justify-content: center;
+  }
+
+  .technologies {
     padding: 1em;
   }
   
@@ -302,9 +301,6 @@ p {
 /* Mobile phones (320px and above) */
 @media only screen and (max-width: 480px) {
 
-    .myContainer {
-        width: 100%;
-    }
     /* Header */
     .header {
         display: none;
@@ -403,8 +399,12 @@ p {
     }
   
     .project-info p {
-      font-size: 0.8em;
+      font-size: 0.75em;
     }
+
+    .technologies {
+        padding-top: 2em;
+      }
   
     .technologies img { 
       margin-right: 0.5em;
@@ -421,7 +421,16 @@ p {
   
   
 /* Small tablets (481px to 767px) */
+/* 
+    Test these designs on the following devices:
+    - Mobile phones (320px and above): e.g. iPhone 5 (320x568px), Samsung Galaxy S8 (360x740px)
+    - Small tablets (481px to 767px): e.g. iPad Mini (768x1024px), Samsung Galaxy Tab S6 (800x1280px)
+    - Tablets (768px to 1023px): e.g. iPad (768x1024px), Google Pixel Slate (1280x800px)
+    - Desktop (1024px to 1279px): e.g. MacBook Air (1280x800px), Dell XPS 13 (1920x1080px)
+    - Large desktop (1441px and above): e.g. iMac (2560x1440px), Dell UltraSharp U2720Q (3840x2160px)
+*/
 @media only screen and (min-width: 481px) and (max-width: 767px) {
+
 
     .introduction {
         padding-left: 0;
@@ -445,16 +454,46 @@ p {
     }
 
     .about {
-        padding-top: 10em;
+        padding: 3em;
+        padding-top: 15em;
+    }
+
+    .about-content {
+        flex-direction: column;
+        border: 3px solid var(--primary-color);
+        background: var(--mobile-box-color);
+        border-radius: 1em;
+        padding: 1em;
+        margin-left: 0;
     }
 
     .about-text {
-        flex-basis: 60%;
+        text-align: center;
+        margin-bottom: 2em;
+        margin: 0;
+    }
+
+    .about-text h1 {
+        margin-top: 0.5em;
     }
 
     .about-img {
+        width: 50%;
+        height: 50%;
+        border-radius: 50%;
+        overflow: hidden;
         border: 5px solid var(--primary-color);
-        width: 35%;
+        box-shadow: 5px 10px 25px rgba(0, 0, 0, 1);
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+    }
+
+    .about-img img {
+        height: 130%;
+        width: 130%;
+        transition: 0.3s ease;
+        object-fit: cover;
+        cursor: pointer;
     }
 
     .about-img img:hover {
@@ -482,55 +521,63 @@ p {
 /* Tablets (768px to 1023px) */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
 
-    .introduction {
-        padding-left: 5em;
+    .header-container {
+        padding: 50px 0;
     }
-
-    .logo {
-        margin-left: -2em;
+    
+    .header-container.sticky {
+        padding: 30px 0;
+    }
+    
+    .header-container.sticky img {
+        width: 60%;
+    }
+    
+    .logo img {
+        width: 100%;
+    }
+    
+    .nav-bar a:hover {
+        color: var(--primary-color);
+        text-decoration: none;
     }
 
     .nav-bar {
+        margin-right: -20em;
+    }
+
+    .nav-bar a {
+        font-size: 2em;
+        margin-right: 1.5em;
+    }
+
+    /* Home Page styles */
+    
+    .introduction {
+        padding-top: 20rem;
+        width: 100em;
+    }
+    
+    .introduction p {
+        font-size: 6em;
+    }
+    
+    .introduction nav a img {
+        width: 72px;
+        height: 72px;
         margin-right: 2em;
     }
 
-    .about {
-        padding-top: 15em;
-        padding-left: 4em;
+    .introduction nav {
+        gap: 1.5em;
+        margin-top: 4em;
     }
 
-    .about-content {
-        padding-right: 4em;
-    }
-
-    .about-text {
-        flex-basis: 50%;
-    }
-
-    .about-img {
-        border: 5px solid var(--primary-color);
-        width: 35%;
-    }
-
-    .about-img img:hover {
+    .introduction nav a:hover {
         transform: none;
     }
 
-    .projects h1 {
-        padding-bottom: 0.5em;
-    }
 
-    .projects-container {
-        flex-direction: column;
-        width: 80%;
-        margin: 0 auto;
-        gap: 2em;
-        align-items: center;
-    }
-
-    .project {
-        width: 70%;
-    }
     
 }
 
@@ -591,6 +638,7 @@ p {
 
 /* Large desktop */
 @media (min-width: 1441px) {
+    
     .nav-bar {
         padding: 2em;
     }
@@ -619,7 +667,6 @@ p {
     .about {
         font-size: 1.75em;
         margin-top: 0em;
-        margin-left: -17em;
     }
 
     .about h1 {
@@ -628,25 +675,7 @@ p {
 
     .about-img {
         width: 40%;
-        margin-right: -12em;
-    }
-
-    .projects h1 {
-        padding-bottom: 0.5em;
-        font-size: 4em;
-    }
-    .projects-container {
-        width: 100%;
-        margin: 0 auto;
-    }
-
-    .projects h4 {
-        font-size: 2.75em;
-        padding: 0.5em;
-    }
-
-    .projects p {
-        font-size: 1.5em;
+        margin-right: 3em;
     }
 
     .circle {
@@ -662,5 +691,52 @@ p {
     .image-placeholder {
         height: 275px;
       }
+
+      /* Projects page styles */
+
+    .projects {
+        padding: 80px 0;
+    }
+
+    .projects h1 {
+        margin-bottom: 1em;
+        font-size: 3em;
+    }
+
+  .project-img {
+    height: 260px;
+}
+
+  .image-placeholder {
+    height: 260px;
+    font-size: 3em;
+  }
+
+  .project-info {
+    margin-top: 1.5em;
+  }
+
+  .project-info h4 {
+    height: 150px;
+    font-size: 2.75em;
+  }
+
+  .project-info p {
+    font-size: 1.59em;
+    height: 325px;
+  }
+
+  .technologies {
+    padding: 2em;
+  }
+
+  .technologies img {
+    height: 3em;
+    margin-right: 1em;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+
 
 }
