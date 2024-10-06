@@ -92,13 +92,15 @@ projects.forEach((project, index) => {
             </div>
         `;
     } else {
-        imagesHTML = `<p style="margin-top: 2em; font-size: 2em; margin-bottom: 3em;"><i>Coming Soon</i></p>`;
+        imagesHTML = `<div class="image-placeholder">
+        <p><i>Coming Soon</i></p>
+        </div>`;
     } 
     
     const projectInfo = `
     <div class="project-info">
-      <h4>${project.title}</h4>
-      <p>${project.description}</p>
+        <h4>${project.title}</h4>
+        <p>${project.description}</p>
       <div class="technologies">
         ${project.technologies
           .map((tech) => `<img src="${tech}" alt="Technology" />`)
