@@ -50,7 +50,7 @@ let projects = [
     {
         title: 'Game Key Store',
         description: 'A school group project still in development: <br> A mobile-optimized game key reselling website. <br> The backend runs in a Docker container with an ASP.NET Core Web API for user authentication and key management, built with C# on .NET 8. The frontend, developed in TypeScript and React, provides a responsive mobile experience.',
-        images: ['img/key_home.jpg'],
+        images: ['img/keyshop.png'],
         technologies: ['img/html.png', 'img/css.png', 'img/react.png', 'img/typescript.png', 'img/net-logo.png', 'img/c_sharp.png'],
     },
     {
