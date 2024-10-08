@@ -116,12 +116,12 @@ p {
 
 .introduction nav a {
     cursor: pointer;
-    transition: transform 0.5s, scale 0.3s;
+    transition: transform 0.5s;
 
 }
 
 .introduction nav a:hover {
-    transform: rotate(360deg) scale(1.25);
+    transform: rotate(360deg)   ;
 }
 
 
@@ -638,35 +638,44 @@ p {
 
 /* Large desktop */
 @media (min-width: 1441px) {
-    
+
+    /* Navbar */
     .nav-bar {
-        padding: 2em;
+        padding: 1em;
     }
 
     .nav-bar a {
-        font-size: 2em;
+        font-size: 1.5em;
         margin-left: 1em;
     }
 
     .logo {
-        width: 40%;
+        width: 30%;
         padding-left: 3em;
     }
 
+    /* Home Page */
     .introduction {
         font-size: 1.5em;
-        margin-top: 5em;
+        margin-top: 6em;
     }
 
     .introduction nav a img {
         width: 66px;
         height: 66px;
         margin-top: 1em;
+        margin-right: 1em;
     }
 
+    /* About Styles */
     .about {
-        font-size: 1.75em;
-        margin-top: 0em;
+        font-size: 1.5em;
+        margin-top: 0;
+    }
+
+    .about-text {
+        flex-basis: 40%;
+        margin-right: 20em;
     }
 
     .about h1 {
@@ -674,7 +683,7 @@ p {
     }
 
     .about-img {
-        width: 40%;
+        width: 30%;
         margin-right: 3em;
     }
 
@@ -703,28 +712,24 @@ p {
         font-size: 3em;
     }
 
-  .project-img {
-    height: 260px;
-}
+    .project-img {
+        height: 280px;
+    }
 
-  .image-placeholder {
-    height: 260px;
-    font-size: 3em;
-  }
+    .image-placeholder {
+        height: 280px;
+        font-size: 3em;
+    }
 
-  .project-info {
-    margin-top: 1.5em;
-  }
+    .project-info {
+        margin-top: 1.5em;
+    }
 
-  .project-info h4 {
-    height: 150px;
-    font-size: 2.75em;
-  }
+    .project-info h4 {
+        height: 150px;
+        font-size: 2.75em;
+    }
 
-  .project-info p {
-    font-size: 1.59em;
-    height: 325px;
-  }
 
   .technologies {
     padding: 2em;
@@ -736,7 +741,21 @@ p {
     cursor: pointer;
     transition: 0.3s ease;
   }
+    .project-info p {
+        padding: 1em;
+        font-size: 1.59em;
+        height: 350px;
+    }
 
+    .technologies {
+        padding: 2em;
+    }
 
+    .technologies img {
+        height: 3em;
+        margin-right: 1em;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
 
 }
